@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'assignment'
+version = '1.0-RELEASE'
+
+javafx {
+    version = "23.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:24.0.0'
+    implementation 'org.xerial:sqlite-jdbc:3.47.0.0'
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'org.slf4j:slf4j-simple:2.0.16'
+    implementation 'org.openjfx:javafx-controls:23.0.1'
+    implementation 'org.openjfx:javafx-fxml:23.0.1'
+    implementation 'com.google.zxing:core:3.5.3'
+    implementation 'com.google.zxing:javase:3.5.3'
+    implementation 'io.github.cdimascio:dotenv-java:3.0.2'
+    //implementation 'com.google.api-client:google-api-client:1.32.1'
+    //implementation 'com.google.apis:google-api-services-books:v1-rev20210406-1.32.1'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainModule = 'assignment.librarymanager'
+    mainClass = 'assignment.librarymanager.Main'
+}
+
+run {
+    jvmArgs = ['--module-path', '%JAVAFX_HOME%/lib', '--add-modules', 'javafx.controls,javafx.fxml']
+}

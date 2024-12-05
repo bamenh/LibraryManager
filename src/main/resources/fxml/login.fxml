@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="700.0" spacing="20.0" styleClass="login-form" stylesheets="@../design/designLogin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <AnchorPane prefHeight="446.0" prefWidth="660.0" styleClass="card-form" stylesheets="@../design/designLogin.css">
+      <children>
+         <HBox alignment="CENTER" layoutX="100.0" layoutY="138.0" prefWidth="200.0">
+            <Region prefHeight="0.0" HBox.hgrow="ALWAYS" />
+         </HBox>
+         <HBox alignment="TOP_RIGHT" layoutX="72.0" layoutY="163.0" prefWidth="200.0" spacing="10.0" />
+         <HBox alignment="CENTER" layoutX="100.0" layoutY="165.0" prefWidth="200.0">
+            <Region prefHeight="0.0" HBox.hgrow="ALWAYS" />
+         </HBox>
+         <Button layoutX="587.0" layoutY="397.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="31.0" prefWidth="58.0" styleClass="login-btn" stylesheets="@../design/designLogin.css" text="Exit" />
+         <Button layoutX="294.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSubmit" styleClass="login-btn" stylesheets="@../design/designLogin.css" text="Login" />
+         <Label layoutX="186.0" layoutY="108.0" text="Library Management" textFill="WHITE">
+            <font>
+               <Font name="Berlin Sans FB" size="30.0" />
+            </font>
+         </Label>
+         <TextField fx:id="idField" layoutX="233.0" layoutY="180.0" prefHeight="28.0" prefWidth="182.0" promptText="ID" styleClass="textfield" stylesheets="@../design/designLogin.css" />
+         <PasswordField fx:id="passwordField" layoutX="232.0" layoutY="208.0" prefHeight="28.0" prefWidth="182.0" promptText="Password" styleClass="textfield" stylesheets="@../design/designLogin.css" />
+      </children>
+   </AnchorPane>
+</VBox>
