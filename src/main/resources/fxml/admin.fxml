@@ -56,11 +56,11 @@
 <?import javafx.scene.text.Text?>
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <MenuBar>
+    <MenuBar styleClass="bars" stylesheets="@../design/dashboardDesign.css">
         <Menu mnemonicParsing="false" text="Menu">
             <MenuItem mnemonicParsing="false" onAction="#createDocumentAction" text="Create document" />
             <MenuItem mnemonicParsing="false" onAction="#createReaderAction" text="Create reader account" />
-            <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Exit" />
+            <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Log Out" />
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
             <MenuItem mnemonicParsing="false" onAction="#showTutorials" text="Tutorial" />
@@ -72,7 +72,7 @@
             <SplitPane dividerPositions="0.6">
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="396.0">
                     <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                        <HBox prefWidth="200.0" spacing="10.0">
+                        <HBox prefWidth="200.0" spacing="10.0" styleClass="textfield" stylesheets="@../design/designLogin.css">
                             <padding>
                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                             </padding>
@@ -82,7 +82,7 @@
                             <TextField fx:id="documentCategoryFilter" layoutX="330.0" layoutY="20.0" promptText="Category" HBox.hgrow="ALWAYS" />
                             <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#filterDocumentsAction" text="Search" />
                         </HBox>
-                        <TableView fx:id="documentsTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="documentsTable" prefHeight="200.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@../design/dashboardDesign.css" VBox.vgrow="ALWAYS">
                             <columns>
                                 <TableColumn fx:id="documentIdColumn" editable="false" prefWidth="75.0" text="ID" />
                                 <TableColumn fx:id="documentNameColumn" editable="false" prefWidth="75.0" text="Name" />
@@ -103,10 +103,10 @@
                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                             </VBox.margin>
                      <Label text="Document ID:" />
-                            <TextField fx:id="documentIdInput" promptText="Enter Document ID" HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="documentIdInput" promptText="Enter Document ID" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
                             <Button mnemonicParsing="false" onAction="#updateDocumentDescription" text="OK" />
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="497.0" prefWidth="357.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="497.0" prefWidth="357.0" styleClass="minimize-btn" stylesheets="@../design/dashboardDesign.css" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                             <VBox fx:id="documentDescription" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false">
                                 <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -212,13 +212,13 @@
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
-                    <TextField fx:id="readerNameFilter" promptText="Name" HBox.hgrow="ALWAYS" />
-                    <TextField fx:id="readerEmailFilter" promptText="Email" HBox.hgrow="ALWAYS" />
-                    <TextField fx:id="readerPhoneNumberFilter" promptText="Phone number" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="readerNameFilter" promptText="Name" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="readerEmailFilter" promptText="Email" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="readerPhoneNumberFilter" promptText="Phone number" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
                     <CheckBox fx:id="readerNotExpiredFilter" mnemonicParsing="false" selected="true" text="Not expired account only" />
                     <Button mnemonicParsing="false" onAction="#filterReadersAction" text="Search" />
                 </HBox>
-                <TableView fx:id="readersTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                <TableView fx:id="readersTable" prefHeight="200.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@../design/dashboardDesign.css" VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="readerIdColumn" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="readerNameColumn" prefWidth="75.0" text="Name" />
@@ -236,7 +236,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                     <Label text="Reader ID:" />
-                    <TextField fx:id="readerIdInput" promptText="Enter Reader ID" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="readerIdInput" promptText="Enter Reader ID" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
                     <Button mnemonicParsing="false" onAction="#editReaderAction" text="Edit" />
                     <Button mnemonicParsing="false" onAction="#deleteReaderAction" text="Delete" />
                 </HBox>
@@ -248,13 +248,13 @@
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
-                    <TextField fx:id="borrowingDocumentFilter" promptText="Document ID" HBox.hgrow="ALWAYS" />
-                    <TextField fx:id="borrowingReaderFilter" promptText="Reader ID" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="borrowingDocumentFilter" promptText="Document ID" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="borrowingReaderFilter" promptText="Reader ID" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
                     <CheckBox fx:id="borrowingOverdueOnlyFilter" mnemonicParsing="false" text="Overdue only" />
                     <CheckBox fx:id="borrowingHistoryFilter" mnemonicParsing="false" text="History" />
                     <Button mnemonicParsing="false" onAction="#filterBorrowingsAction" text="Search" />
                 </HBox>
-                <TableView fx:id="borrowingsTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                <TableView fx:id="borrowingsTable" prefHeight="200.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@../design/dashboardDesign.css" VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="borrowingIdColumn" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="borrowingDocumentColumn" prefWidth="75.0" text="Document ID" />
@@ -272,7 +272,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                     <Label text="Borrowing ID:" />
-                    <TextField fx:id="borrowingIdInput" promptText="Enter Borrowing ID" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="borrowingIdInput" promptText="Enter Borrowing ID" styleClass="card-form" stylesheets="@../design/dashboardDesign.css" HBox.hgrow="ALWAYS" />
                     <Button mnemonicParsing="false" onAction="#returnDocumentAction" text="Return" />
                 </HBox>
             </VBox>

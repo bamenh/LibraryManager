@@ -5,17 +5,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="700.0" spacing="20.0" styleClass="login-form" stylesheets="@../design/designLogin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="711.0" spacing="20.0" styleClass="nav-form" stylesheets="@../design/dashboardDesign.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
-   <AnchorPane prefHeight="446.0" prefWidth="660.0" styleClass="card-form" stylesheets="@../design/designLogin.css">
+   <AnchorPane prefHeight="437.0" prefWidth="648.0" styleClass="card-form" stylesheets="@../design/designLogin.css">
       <children>
          <HBox alignment="CENTER" layoutX="100.0" layoutY="138.0" prefWidth="200.0">
             <Region prefHeight="0.0" HBox.hgrow="ALWAYS" />
@@ -24,15 +27,47 @@
          <HBox alignment="CENTER" layoutX="100.0" layoutY="165.0" prefWidth="200.0">
             <Region prefHeight="0.0" HBox.hgrow="ALWAYS" />
          </HBox>
-         <Button layoutX="587.0" layoutY="397.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="31.0" prefWidth="58.0" styleClass="login-btn" stylesheets="@../design/designLogin.css" text="Exit" />
-         <Button layoutX="294.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSubmit" styleClass="login-btn" stylesheets="@../design/designLogin.css" text="Login" />
-         <Label layoutX="186.0" layoutY="108.0" text="Library Management" textFill="WHITE">
+         <Label layoutX="135.0" layoutY="183.0" prefHeight="38.0" prefWidth="96.0" styleClass="login" stylesheets="@../design/style.css" text="Library " textFill="WHITE">
             <font>
-               <Font name="Berlin Sans FB" size="30.0" />
+               <Font name="System Bold Italic" size="26.0" />
             </font>
          </Label>
-         <TextField fx:id="idField" layoutX="233.0" layoutY="180.0" prefHeight="28.0" prefWidth="182.0" promptText="ID" styleClass="textfield" stylesheets="@../design/designLogin.css" />
-         <PasswordField fx:id="passwordField" layoutX="232.0" layoutY="208.0" prefHeight="28.0" prefWidth="182.0" promptText="Password" styleClass="textfield" stylesheets="@../design/designLogin.css" />
+         <ImageView fitHeight="204.0" fitWidth="371.0" layoutX="6.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../LIBRARY-MANAGEMENT-SYSTEM.png" />
+            </image>
+         </ImageView>
+         <AnchorPane layoutX="379.0" prefHeight="450.0" prefWidth="291.0" styleClass="login-form" stylesheets="@../design/dashboardDesign.css">
+            <children>
+               <TextField fx:id="idField" layoutX="55.0" layoutY="211.0" prefHeight="28.0" prefWidth="182.0" promptText="User ID" styleClass="textfield" stylesheets="@../design/designLogin.css" />
+               <PasswordField fx:id="passwordField" layoutX="55.0" layoutY="250.0" prefHeight="28.0" prefWidth="182.0" promptText="Password" styleClass="textfield" stylesheets="@../design/designLogin.css" />
+               <Button layoutX="55.0" layoutY="303.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="31.0" prefWidth="182.0" styleClass="login-btn" stylesheets="@../design/designLogin.css" text="Login" />
+               <Button layoutX="217.0" layoutY="400.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="31.0" prefWidth="58.0" styleClass="login-btn" stylesheets="@../design/designLogin.css" text="Exit" />
+               <ImageView fitHeight="112.0" fitWidth="162.0" layoutX="90.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Logo_HUET.svg.png" />
+                  </image>
+                  <effect>
+                     <ColorAdjust brightness="1.0" />
+                  </effect>
+               </ImageView>
+            </children>
+         </AnchorPane>
+         <ImageView fitHeight="112.0" fitWidth="118.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../icon1.png" />
+            </image>
+         </ImageView>
+         <Label layoutX="213.0" layoutY="202.0" prefHeight="46.0" prefWidth="118.0" styleClass="login" stylesheets="@../design/style.css" text="Manager" textFill="WHITE">
+            <font>
+               <Font name="System Bold Italic" size="26.0" />
+            </font>
+         </Label>
+         <Label layoutX="16.0" layoutY="144.0" prefHeight="38.0" prefWidth="137.0" styleClass="login" stylesheets="@../design/style.css" text="Welcom to" textFill="WHITE">
+            <font>
+               <Font name="System Bold Italic" size="26.0" />
+            </font>
+         </Label>
       </children>
    </AnchorPane>
 </VBox>

@@ -70,6 +70,10 @@ public class EditDocumentForm implements FormInterface {
 		popup.showAndWait();
 	}
 
+	public void selectImage() {
+		AlertPopup.open("Alert", "Feature will be updated later");
+	}
+
 	@Override
 	public void onSubmit() {
 		String name = nameField.getText();
@@ -77,6 +81,10 @@ public class EditDocumentForm implements FormInterface {
 			AlertPopup.open("Error", "Name cannot be empty");
 			return;
 		}
+//		else if (isNameExist(name)) {
+//			AlertPopup.open("Error", "Name already exists");
+//			return;
+//		}
 		int quantity;
 		try {
 			quantity = Integer.parseInt(qtyField.getText());
@@ -99,6 +107,8 @@ public class EditDocumentForm implements FormInterface {
 		}
 		popup.close();
 	}
+
+
 
 	@Override
 	public void onCancel() {

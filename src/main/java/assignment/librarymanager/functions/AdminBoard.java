@@ -10,6 +10,7 @@ import assignment.librarymanager.managers.ReaderStorage;
 import assignment.librarymanager.utils.AlertPopup;
 import assignment.librarymanager.utils.QRGenerator;
 import assignment.librarymanager.utils.TimeUtils;
+import assignment.librarymanager.Main;
 import com.google.zxing.WriterException;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -224,7 +225,10 @@ public class AdminBoard {
 	@FXML
 	public TextField borrowingIdInput;
 
+	private Stage stage;
+
 	public AdminBoard(Stage stage) throws IOException, SQLException {
+		this.stage = stage;
 		Database database = new Database();
 		documentStorage = new DocumentStorage(database);
 		readerStorage = new ReaderStorage(database);
@@ -309,9 +313,23 @@ public class AdminBoard {
 		filterBorrowingsAction();
 	}
 
+
+	public void exitAction() {
+		try {
+			stage.close();
+			Main mainApp = new Main();
+			stage.setResizable(true);
+			mainApp.start(stage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	/*
 	public void exitAction() {
 		Platform.exit();
 	}
+	*/
 
 	public void showTutorials() {
 		AlertPopup.open("Tutorials", """

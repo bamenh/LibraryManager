@@ -46,7 +46,7 @@ public class Main extends Application implements FormInterface {
 	@Override
 	public void start(Stage stage) throws IOException {
 		this.stage = stage;
-		stage.setTitle("Library Management");
+		stage.setTitle("Library Manager");
 		stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icon.png"))));
 		FXMLLoader root = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/login.fxml")));
 		root.setController(this);

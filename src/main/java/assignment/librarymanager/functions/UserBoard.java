@@ -1,5 +1,6 @@
 package assignment.librarymanager.functions;
 
+import assignment.librarymanager.Main;
 import assignment.librarymanager.data.Reader;
 import assignment.librarymanager.utils.AlertPopup;
 import assignment.librarymanager.data.Borrowing;
@@ -161,7 +162,9 @@ public class UserBoard {
 	@FXML
 	public TableColumn<Borrowing, String> borrowingReturnTimeColumn;
 
+	private Stage stage;
 	public UserBoard(Stage stage, Reader reader) throws IOException, SQLException {
+		this.stage = stage;
 		this.reader = reader;
 		Database database = new Database();
 		documentStorage = new DocumentStorage(database);
@@ -206,9 +209,20 @@ public class UserBoard {
 	}
 
 	public void exitAction() {
+		try {
+			stage.close();
+			Main mainApp = new Main();
+			stage.setResizable(true);
+			mainApp.start(stage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	/*
+	public void exitAction() {
 		Platform.exit();
 	}
-
+	*/
 	public void showTutorials() {
 		AlertPopup.open("Tutorials", """
 				This is a simple library management system
