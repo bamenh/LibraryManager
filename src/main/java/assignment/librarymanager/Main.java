@@ -17,6 +17,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import javax.security.auth.login.LoginException;
@@ -53,6 +54,12 @@ public class Main extends Application implements FormInterface {
 		Scene scene = new Scene(root.load());
 		stage.setScene(scene);
 		stage.setResizable(false);
+
+		scene.setOnKeyPressed(event -> {
+			if (event.getCode().equals(KeyCode.ENTER)) {
+				onSubmit();
+			}
+		});
 
 		idField.setTextFormatter(new TextFormatter<String>(change -> {
 			String text = change.getControlNewText();

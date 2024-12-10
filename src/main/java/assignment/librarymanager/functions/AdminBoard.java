@@ -333,15 +333,24 @@ public class AdminBoard {
 
 	public void showTutorials() {
 		AlertPopup.open("Tutorials", """
-				This is a simple library management system
+				This is a simple library management system developed by us...
+				
 				1. Create a document by clicking the 'Create document' button in the menu
+				
 				2. Edit a document by selecting a document from the list and clicking the 'Edit document' button
+				
 				3. Delete a document by selecting a document from the list and clicking the 'Delete document' button
+				
 				4. Create a reader by clicking the 'Create reader account' button in the menu
+				
 				5. Edit a reader by selecting a reader from the list and clicking the 'Edit reader' button
+				
 				6. Delete a reader by selecting a reader from the list and clicking the 'Delete reader' button
+				
 				7. Filter documents and readers by entering the search criteria and clicking the 'Filter' button
+				
 				8. Borrow a document by selecting a reader and a document and clicking the 'Borrow' button
+				
 				9. Return a document by select a borrowing and clicking the 'Return' button
 				"""
 		);

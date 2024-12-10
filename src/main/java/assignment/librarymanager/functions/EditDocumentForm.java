@@ -14,6 +14,7 @@ import javafx.stage.StageStyle;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class EditDocumentForm implements FormInterface {
@@ -81,10 +82,16 @@ public class EditDocumentForm implements FormInterface {
 			AlertPopup.open("Error", "Name cannot be empty");
 			return;
 		}
-//		else if (isNameExist(name)) {
-//			AlertPopup.open("Error", "Name already exists");
-//			return;
-//		}
+		try {
+			if (documentStorage.isNameExist(name)) {
+				AlertPopup.open("Error", "Name already exists");
+				return;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			AlertPopup.open("Error", "Failed to check name existence");
+			return;
+		}
 		int quantity;
 		try {
 			quantity = Integer.parseInt(qtyField.getText());

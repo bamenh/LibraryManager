@@ -1,6 +1,7 @@
 package assignment.librarymanager.managers;
 
 import assignment.librarymanager.data.Document;
+import java.sql.PreparedStatement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -133,6 +134,19 @@ public class DocumentStorage extends StorageAbs<Document> {
 		}
 		statement.close();
 		return documents;
+	}
+
+	public boolean isNameExist(String name) throws SQLException {
+		String sql = "SELECT COUNT(*) AS count FROM documents WHERE name = ?";
+		try (PreparedStatement preparedStatement = database.getConnection().prepareStatement(sql)) {
+			preparedStatement.setString(1, name);
+			try (ResultSet resultSet = preparedStatement.executeQuery()) {
+				if (resultSet.next()) {
+					return resultSet.getInt("count") > 0;
+				}
+			}
+		}
+		return false;
 	}
 
 }
